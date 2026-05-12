@@ -1,6 +1,5 @@
 <?php include('../config.php'); ?>
 <?php include('../header.php'); ?>
-
 <?php
     if(isset($_GET["editid"])){
         $id = $_GET["editid"];
@@ -16,15 +15,12 @@
         $engine = $_GET['engine'];
         $fuel = $_GET['fuel'];
         $price = $_GET['price'];
-
         $year = $_GET['year'];
         $transmission = $_GET['transmission'];
         $seats = $_GET['seats'];
         $description = $_GET['description'];
         $status = $_GET['status'];
-
         $paring = "UPDATE cars SET mark = '".$mark."', model = '".$model."', engine = '".$engine."', fuel = '".$fuel."', price = '".$price."', year = '".$year."', transmission = '".$transmission."', seats = '".$seats."', description = '".$description."', status = '".$status."' WHERE cars.id = ".$id."";
-
         $valjund = mysqli_query($yhendus, $paring);
         $tulemus = mysqli_affected_rows($yhendus);
         if ($tulemus == 1) {
@@ -35,19 +31,13 @@
 
 
     }
-
-
-
 ?>
-
-<!-- sisu -->
 <div class="container">
     <h2>Auto lisamine</h2>
     <form action="muuda.php" method="get">
         <div class="row g-4">
             <div class="col-sm-6">
                 <input type="hidden" name="updateid" value="<?= $rida['id']; ?>">
-
                 <label for="mark" class="form-label">Mark</label>
                 <input type="text" class="form-control" id="mark" name="mark" value="<?= $rida['mark']; ?>">
                 <label for="model" class="form-label">Model</label>
@@ -74,12 +64,8 @@
             <input type="submit" value="Salvesta" class="btn btn-success">
         </div>
     </form>
-   
-
 </div>
-<!-- /sisu -->
-
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   </body>
 </html>
+<?php include('../footer.php'); ?>

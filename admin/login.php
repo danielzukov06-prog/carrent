@@ -12,32 +12,27 @@
   </head>
   <body>
 <?php
-    $msg = "";
-
-    if (!empty($_POST)) {
-
-        //kasutaja vormist
-        $uname = $_POST['user'];
-        $password = $_POST['password'];
-
-        //kasutaja andmebaasist
-        $paring = "SELECT username, password FROM users WHERE username='".$uname."'";
-        print_r($paring);
-        $valjund = mysqli_query($yhendus, $paring);
-        $rida = mysqli_fetch_assoc($valjund);
-
-        if (!empty($rida)) {
-            $hash = $rida['password'];
-            if ($uname == $rida['username'] && $password == $rida['password']) {
-                $_SESSION['tuvastamine'] = 'misiganes';
-                header("Location: index.php");
-            }else{
-                $msg = "kasutaja vale";
-            }
+$msg = "";
+if (!empty($_POST)) {
+    $uname = $_POST['user'];
+    $password = $_POST['password'];
+    $paring = "SELECT username, password FROM users WHERE username='".$uname."'";
+    $valjund = mysqli_query($yhendus, $paring);
+    $rida = mysqli_fetch_assoc($valjund);
+    if (!empty($rida)) {
+        if ($uname == $rida['username'] && $password == $rida['password']) {
+            $_SESSION['is_admin'] = true;
+            $_SESSION['user'] = $uname;
+            header("Location: index.php");
+            exit;
+        } else {
+            $msg = "Vale kasutaja või parool!";
         }
 
+    } else {
+        $msg = "Kasutajat ei leitud!";
     }
-
+}
 ?>
     <div class="container">
         <div class="row pt-4 mt-4">
@@ -59,9 +54,6 @@
             <div class="col-sm-4"></div>
         </div>
     </div>
-  
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   </body>
 </html>

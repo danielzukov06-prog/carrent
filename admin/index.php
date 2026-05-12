@@ -1,16 +1,13 @@
 <?php
 session_start();
-
-if (!isset($_SESSION['tuvastamine'])) {
+if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
   header('Location: login.php');
   exit();
   }
 
 ?>
-
 <?php include('../config.php'); ?>
 <?php include('../header.php'); ?>
-
 <div class="container">
     <h2>Admin</h2>
     <a href="lisa.php" class="btn btn-success">+ Lisa auto</a>
@@ -19,16 +16,13 @@ if (!isset($_SESSION['tuvastamine'])) {
     if(isset($_GET['msg'])){
       echo '<div class="alert alert-success" role="alert"> Lisatud! </div>';
     }
-
     $paring = "SELECT * FROM cars";
     if (!empty($_GET["otsi"])) {
         $otsing = $_GET["otsi"];
         $paring .= " WHERE mark LIKE '%".$otsing."%'";
     } 
     $paring .= " LIMIT 8";
-
     $valjund = mysqli_query($yhendus, $paring);
-
 ?>
 <table class="table">
   <thead>
@@ -53,14 +47,16 @@ if (!isset($_SESSION['tuvastamine'])) {
       <td><a href="kustuta.php?delid=<?= $rida["id"]; ?>" class="btn btn-danger">Kustuta</a></td>
       <td><a href="muuda.php?editid=<?= $rida["id"]; ?>" class="btn btn-warning">Muuda</a></td>
     </tr>
-
     <?php } ?>
-
   </tbody>
 </table>
 </div>
-
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   </body>
 </html>
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Bookingud</h2>
+        <a href="bookings.php" class="btn btn-dark">Reserveeringud</a>
+    </div>
+<?php include('footer.php'); ?>

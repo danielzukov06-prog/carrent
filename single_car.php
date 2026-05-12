@@ -19,7 +19,9 @@
             <p>Käigukast:  <?php echo $rida["transmission"]; ?></p>
             <p>Istmed:  <?php echo $rida["seats"]; ?></p>
             <p class="fs-5">Hind:  <?php echo $rida["price"]; ?></p>
-            <a href="#" class="btn btn-dark w-100">Rendi auto</a>
+            <a href="booking.php?id=<?= $rida['id'] ?>" class="btn btn-dark w-100">
+            Rendi auto
+            </a>
         </div>
         <div class="col">
             <img src="https://loremflickr.com/800/500/<?php echo str_replace(" ","", $rida["mark"]); ?>" class="card-img-top img-fluid" alt="<?php echo $rida["mark"]; ?>">

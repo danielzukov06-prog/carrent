@@ -25,14 +25,21 @@
           <a class="nav-link" href="#">Hinnad</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Kontakt</a>
+          <a class="nav-link" href="kalkulaator.php">Kontakt</a>
+        </li>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="/project2/admin/index.php">Admin</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="/project2/register.php">Register</a>
         </li>
       </ul>
       <form class="d-flex" role="search" method="get" action="index.php">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="otsi">
         <button class="btn btn-outline-success" type="submit">Otsi</button>
       </form>
-      <a href="admin/logout.php" class="ms-4 btn btn-danger">Logi välja</a>
+      <a href="/project2/admin/logout.php" class="ms-4 btn btn-danger">Logi välja</a>
     </div>
   </div>
 </nav>

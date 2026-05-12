@@ -1,6 +1,5 @@
 <?php include('../config.php'); ?>
 <?php include('../header.php'); ?>
-
 <?php
     if(!empty($_GET)){
        $mark = $_GET['mark'];
@@ -8,16 +7,12 @@
        $engine = $_GET['engine'];
        $fuel = $_GET['fuel'];
        $price = $_GET['price'];
-
        $year = $_GET['year'];
        $transmission = $_GET['transmission'];
        $seats = $_GET['seats'];
        $description = $_GET['description'];
        $status = $_GET['status'];
-
-
        $sql = "INSERT INTO cars (mark, model, engine, fuel, price, year, transmission, seats, description, status) VALUES ('".$mark."', '".$model."', '".$engine."', '".$fuel."', '".$price."', '".$year."', '".$transmission."', '".$seats."', '".$description."', '".$status."')";
-
        $valjund = mysqli_query($yhendus, $sql); 
        $tulemus = mysqli_affected_rows($yhendus);
         if ($tulemus == 1) {
@@ -29,7 +24,6 @@
 
     }
 ?>
-
 <div class="container">
     <h2>Auto lisamine</h2>
     <form action="lisa.php" method="get">
@@ -61,12 +55,8 @@
             <input type="submit" value="Salvesta" class="btn btn-success">
         </div>
     </form>
-   
-
 </div>
-<!-- /sisu -->
-
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   </body>
 </html>
+<?php include('../footer.php'); ?>

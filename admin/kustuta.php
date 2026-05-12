@@ -8,7 +8,7 @@
             echo "Kustutatud";
             header("Location: index.php");
         } else {
-            echo "Urror";
+            echo "Error";
         }
     }
 
