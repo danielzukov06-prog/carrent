@@ -1,7 +1,7 @@
 ```mermaid
 erDiagram
-    USER ||--o{ BOOKING : makes
-    CAR  ||--o{ BOOKING : is_booked_in
+    USER ||--o{ RESERVATIONS : makes
+    CAR  ||--o{ RESERVATIONS : is_booked_in
 
     USER {
         int id PK
@@ -24,7 +24,7 @@ erDiagram
         varchar status
     }
 
-    BOOKING {
+    RESERVATIONS {
         int id PK
         int user_id
         int car_id
