@@ -1,7 +1,3 @@
-<?php 
-    session_start(); 
-    include('../config.php');
-?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -12,6 +8,7 @@
   </head>
   <body>
 <?php
+include('../inc/config.php');
 $msg = "";
 if (!empty($_POST)) {
     $uname = $_POST['user'];

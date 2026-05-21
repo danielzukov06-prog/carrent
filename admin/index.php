@@ -6,8 +6,8 @@ if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
   }
 
 ?>
-<?php include('../config.php'); ?>
-<?php include('../header.php'); ?>
+<?php include('../inc/config.php'); ?>
+<?php include('../inc/header.php'); ?>
 <div class="container">
     <h2>Admin</h2>
     <a href="lisa.php" class="btn btn-success">+ Lisa auto</a>

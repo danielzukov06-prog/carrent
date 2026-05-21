@@ -1,5 +1,5 @@
-<?php include('config.php'); ?>
-<?php include('header.php'); ?>
+<?php include('../inc/config.php'); ?>
+<?php include('../inc/header.php'); ?>
 
 <div class="container">
     <div class="row row-cols-1 row-cols-md-4 g-4">
@@ -33,4 +33,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   </body>
 </html>
-<?php include('footer.php'); ?>
+<?php include('../inc/footer.php'); ?>

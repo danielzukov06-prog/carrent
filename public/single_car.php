@@ -1,5 +1,5 @@
-<?php include('config.php'); ?>
-<?php include('header.php'); ?>
+<?php include('../inc/config.php'); ?>
+<?php include('../inc/header.php'); ?>
 <div class="container">
     <a href="index.php" class="btn btn-dark">Tagasi</a>
     <div class="row">
