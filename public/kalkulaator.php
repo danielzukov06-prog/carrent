@@ -1,10 +1,10 @@
-<?php include 'header.php'; ?>
+<?php include '../inc/header.php'; ?>
 <h2 class="text-center my-4">nothing here sugar</h2>
 <div class="container my-4 d-flex justify-content-center">
   <img 
-    src="/carrent/mugshot.jpg"
+    src="/carrent/public/mugshot.jpg"
     class="img-fluid rounded shadow"
     alt="mugshot"
-  >
+    >
 </div>
-<?php include 'footer.php'; ?>
+<?php include '../inc/footer.php'; ?>

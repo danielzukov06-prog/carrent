@@ -8,7 +8,8 @@ if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
 ?>
 <?php include('../inc/config.php'); ?>
 <?php include('../inc/header.php'); ?>
-<div class="container">
+<body class="d-flex flex-column min-vh-100">
+<div class="container flex-grow-1">
     <h2>Admin</h2>
     <a href="lisa.php" class="btn btn-success">+ Lisa auto</a>
     <div class="row row-cols-1 row-cols-md-4 g-4">
@@ -51,12 +52,9 @@ if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
   </tbody>
 </table>
 </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-  </body>
-</html>
-<div class="container mt-4">
-    <div class="d-flex justify-content-between align-items-center mb-3">
-    <h2>Bookingud</h2>
-        <a href="bookings.php" class="btn btn-dark">Reserveeringud</a>
-    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<h2>Bookingud</h2>
+<a href="bookings.php" class="btn btn-dark">Reserveeringud</a>
+</div>
+</div>
 <?php include('footer.php'); ?>

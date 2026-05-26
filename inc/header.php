@@ -35,15 +35,15 @@ $base_url = "/carrent";
         <a class="nav-link" href="/carrent/admin/index.php">Admin</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="/carrent/inc/register.php">Register</a>
+        <a class="nav-link" href="/carrent/inc/register.php">Registreeri</a>
         </li>
       </ul>
-      <form method="get" action="/carrent/public/index.php">
+      <form class="d-flex" method="get" action="/carrent/public/index.php">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="otsi">
         <button class="btn btn-outline-success" type="submit">Otsi</button>
       </form>
       <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin']): ?>
-        <a href="<?= $base_url ?> /admin/logout.php" class="btn btn-outline-danger">Logi välja</a>
+        <a href="<?= $base_url ?>/admin/logout.php" class="btn btn-outline-danger">Logi välja</a>
       <?php else: ?>
         <a href="<?= $base_url ?>/admin/login.php" class="btn btn-outline-success">Logi sisse</a>
       <?php endif; ?>
